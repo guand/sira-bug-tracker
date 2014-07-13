@@ -1,0 +1,25 @@
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a ng-href="#">Home</a></li>
+    <li><a ng-href="#">About</a></li>
+    <li><a ng-href="#">Contact</a></li>
+    <li><a href="#/main">Main</a></li>
+  </ul>
+  <h3 class="text-muted">sira bug tracker</h3>
+</div>
+<div ng-controller="RegistrationCtrl">
+  <form ng-submit="submit()" name="registrationForm">
+    Username: <input type="text" name="username" ng-model="register.username" required>
+    <span class="error" ng-show="registrationForm.username.$error.required">Required!</span><br>
+    Email: <input type="text" name="email" ng-model="register.email" required>
+    <span class="error" ng-show="registrationForm.email.$error.required">Required!</span><br>
+    Password: <input type="password" name="password" ng-model="register.password" equals="{{register.passwordvarify}}" required>
+    <span class="error" ng-show="registrationForm.password.$error.required">Required!</span><br>
+    Re-type Password: <input type="password" name="password" ng-model="register.passwordvarify" equals="{{register.password}}" required>
+    <span class="error" ng-show="registrationForm.passwordvarify.$error.required">Required!</span><br>
+    <input type="submit" id="submit" value="Submit" />
+  </form>
+</div>
+<div class="footer">
+  <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+</div>
